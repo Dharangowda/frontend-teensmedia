@@ -44,7 +44,7 @@ const CreatePost = ({ userId, onPostSuccess, onBanDetected }) => {
 
     try {
       const base64String = preview.split(',')[1] || preview;
-      const response = await axios.post('http://localhost:5000/api/check', {
+      const response = await axios.post('ec2-13-60-75-156.eu-north-1.compute.amazonaws.com:5000/api/check', {
         imageBase64: base64String,
         userId: Number(userId)
       });
