@@ -65,6 +65,7 @@ const Register = ({ onRegister }) => {
         overflow: 'hidden'
       }}
     >
+      {/* BG */}
       <motion.div
         style={{
           position: 'absolute',
@@ -93,6 +94,7 @@ const Register = ({ onRegister }) => {
         zIndex: 0
       }} />
 
+      {/* Particles */}
       {[...Array(10)].map((_, i) => (
         <motion.div
           key={i}
@@ -117,6 +119,7 @@ const Register = ({ onRegister }) => {
         />
       ))}
 
+      {/* CARD */}
       <motion.div 
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -132,14 +135,15 @@ const Register = ({ onRegister }) => {
           backdropFilter: 'blur(5px)'
         }}
       >
+
+        {/* TITLE */}
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
           <motion.h1 
             style={{
               color: '#2d3436',
               fontFamily: '"Comic Neue", cursive',
               fontSize: '2.5rem',
-              margin: '0 0 10px 0',
-              textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+              margin: '0 0 10px 0'
             }}
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -160,6 +164,7 @@ const Register = ({ onRegister }) => {
           </motion.p>
         </div>
 
+        {/* ERROR */}
         {error && (
           <motion.div 
             initial={{ opacity: 0, y: -10 }}
@@ -170,15 +175,16 @@ const Register = ({ onRegister }) => {
               padding: '12px',
               borderRadius: '10px',
               marginBottom: '20px',
-              textAlign: 'center',
-              fontFamily: '"Comic Neue", cursive'
+              textAlign: 'center'
             }}
           >
             ⚠️ {error}
           </motion.div>
         )}
 
+        {/* FORM */}
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+
           <motion.div whileHover={{ scale: 1.02 }}>
             <input
               type="text"
@@ -191,11 +197,8 @@ const Register = ({ onRegister }) => {
                 borderRadius: '15px',
                 border: '3px solid #74b9ff',
                 fontSize: '1.2rem',
-                fontFamily: '"Comic Neue", cursive',
                 background: 'rgba(255,255,255,0.8)',
-                color: '#2d3436',
-                outline: 'none',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
+                outline: 'none'
               }}
               required
             />
@@ -213,17 +216,15 @@ const Register = ({ onRegister }) => {
                 borderRadius: '15px',
                 border: '3px solid #74b9ff',
                 fontSize: '1.2rem',
-                fontFamily: '"Comic Neue", cursive',
                 background: 'rgba(255,255,255,0.8)',
-                color: '#2d3436',
                 outline: 'none',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
                 borderColor: '#a55eea'
               }}
               required
             />
           </motion.div>
 
+          {/* UPDATED SIGN UP BUTTON */}
           <motion.button 
             type="submit" 
             disabled={isLoading}
@@ -237,37 +238,26 @@ const Register = ({ onRegister }) => {
               color: 'white',
               fontSize: '1.4rem',
               fontWeight: 'bold',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '12px',
-              textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+              cursor: 'pointer'
             }}
           >
             {isLoading ? (
-              <motion.span
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity }}
-              >
+              <motion.span animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity }}>
                 🌀
               </motion.span>
             ) : (
               <>
-                Begin Journey!
-                <motion.span 
-                  animate={{ scale: [1, 1.5, 1] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                >
+                Sign Up
+                <motion.span animate={{ scale: [1, 1.5, 1] }} transition={{ repeat: Infinity, duration: 1.5 }}>
                   ⚡
                 </motion.span>
               </>
             )}
           </motion.button>
+
         </form>
 
-        {/* 🔥 UPDATED PART: Replaced text with Login button */}
+        {/* 🔥 UPDATED BOTTOM SECTION */}
         <motion.div
           style={{
             textAlign: 'center',
@@ -276,6 +266,16 @@ const Register = ({ onRegister }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
         >
+          <p
+            style={{
+              color: '#2d3436',
+              fontFamily: '"Comic Neue", cursive',
+              fontSize: '1.1rem'
+            }}
+          >
+            Click below to go back to Login page
+          </p>
+
           <motion.button
             onClick={() => navigate('/login')}
             whileHover={{ scale: 1.07 }}
@@ -289,12 +289,10 @@ const Register = ({ onRegister }) => {
               fontSize: '1.2rem',
               fontWeight: 'bold',
               cursor: 'pointer',
-              textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-              boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
               fontFamily: '"Comic Neue", cursive'
             }}
           >
-            Login 🚀
+            Login
           </motion.button>
         </motion.div>
 

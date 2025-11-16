@@ -66,6 +66,8 @@ const Login = ({ onLogin }) => {
         overflow: 'hidden'
       }}
     >
+
+      {/* Background */}
       <motion.div
         style={{
           position: 'absolute',
@@ -84,6 +86,7 @@ const Login = ({ onLogin }) => {
         transition={{ duration: 1 }}
       />
 
+      {/* Overlay */}
       <div style={{
         position: 'absolute',
         top: 0,
@@ -94,6 +97,7 @@ const Login = ({ onLogin }) => {
         zIndex: 0
       }} />
 
+      {/* Floating Particles */}
       {[...Array(10)].map((_, i) => (
         <motion.div
           key={i}
@@ -118,6 +122,7 @@ const Login = ({ onLogin }) => {
         />
       ))}
 
+      {/* MAIN CARD */}
       <motion.div 
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
@@ -133,6 +138,8 @@ const Login = ({ onLogin }) => {
           backdropFilter: 'blur(5px)'
         }}
       >
+
+        {/* Title */}
         <div style={{ textAlign: 'center', marginBottom: '30px' }}>
           <motion.h1 
             style={{
@@ -160,6 +167,7 @@ const Login = ({ onLogin }) => {
           </motion.p>
         </div>
 
+        {/* ERROR */}
         {error && (
           <motion.div 
             initial={{ opacity: 0, y: -10 }}
@@ -178,7 +186,9 @@ const Login = ({ onLogin }) => {
           </motion.div>
         )}
 
+        {/* FORM */}
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+          
           <motion.div whileHover={{ scale: 1.02 }}>
             <input
               type="text"
@@ -224,6 +234,7 @@ const Login = ({ onLogin }) => {
             />
           </motion.div>
 
+          {/* UPDATED LOGIN BUTTON */}
           <motion.button 
             type="submit" 
             disabled={isLoading}
@@ -255,7 +266,7 @@ const Login = ({ onLogin }) => {
               </motion.span>
             ) : (
               <>
-                Continue Adventure!
+                Click to Login
                 <motion.span 
                   animate={{ scale: [1, 1.5, 1] }}
                   transition={{ repeat: Infinity, duration: 1.5 }}
@@ -267,34 +278,36 @@ const Login = ({ onLogin }) => {
           </motion.button>
         </form>
 
-        {/* UPDATED PART: REPLACEMENT FOR “Join the adventure” */}
+        {/* UPDATED BOTTOM SECTION */}
         <motion.div
           style={{
             textAlign: 'center',
-            marginTop: '25px'
+            marginTop: '25px',
+            color: '#636e72',
+            fontFamily: '"Comic Neue", cursive',
+            fontSize: '1.1rem'
           }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
         >
+          Do not have an account?
           <motion.button
             onClick={() => navigate('/register')}
             whileHover={{ scale: 1.07 }}
             whileTap={{ scale: 0.95 }}
             style={{
+              marginLeft: '10px',
               background: 'linear-gradient(45deg, #6c5ce7, #fd79a8)',
-              padding: '14px 28px',
-              borderRadius: '20px',
+              padding: '10px 20px',
+              borderRadius: '15px',
               border: 'none',
               color: 'white',
-              fontSize: '1.2rem',
               fontWeight: 'bold',
               cursor: 'pointer',
-              textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-              boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
-              fontFamily: '"Comic Neue", cursive'
+              fontSize: '1rem',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.2)'
             }}
           >
-            Register 🚀
+            Click to Sing Up
           </motion.button>
         </motion.div>
 
