@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -12,17 +10,15 @@ const Login = ({ onLogin }) => {
   const [currentBg, setCurrentBg] = useState(0);
   const navigate = useNavigate();
 
-  // 3D wallpaper backgrounds array
   const backgrounds = [
-    'https://imgs.search.brave.com/y2Kac64YsDcZa2KG7KaL0RKM5UZLmkCcV11ITibLgyM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA3LzEyLzQ2LzE5/LzM2MF9GXzcxMjQ2/MTkwMF9MS2NJZW5C/Qmk1TWRLNnoxUVVj/SUNFbk9CMVJORUJZ/Qy5qcGc', // Abstract 3D shapes
-    'https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=croph', // Neon 3D landscape
-    'https://imgs.search.brave.com/_oWICImyyotLibpK3muLXxv8XdNQx3dhUedbrkJGlF8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aXdhbnR3YWxscGFw/ZXIuY28udWsvaW1h/Z2VzL2RjLWNvbWlj/cy1jb2xsZWN0aW9u/LWp1c3RpY2UtbGVh/Z3VlLXN1cGVyLWhl/cm9lcy13YWxscGFw/ZXItcDY5MjYtMTk2/MDJfbWVkaXVtLmpw/Zw', // Floating 3D islands
-    'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2370&auto=format&fit=crop', // Cyberpunk city
-    'https://images.unsplash.com/photo-1679678691006-0d9a4a5df3e3?q=80&w=2370&auto=format&fit=crop', // Abstract liquid
+    'https://imgs.search.brave.com/y2Kac64YsDcZa2KG7KaL0RKM5UZLmkCcV11ITibLgyM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA3LzEyLzQ2LzE5/LzM2MF9GXzcxMjQ2/MTkwMF9MS2NJZW5C/Qmk1TWRLNnoxUVVj/SUNFbk9CMVJORUJZ/Qy5qcGc',
+    'https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2232&auto=format&fit=crop',
+    'https://imgs.search.brave.com/_oWICImyyotLibpK3muLXxv8XdNQx3dhUedbrkJGlF8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/aXdhbnR3YWxscGFw/ZXIuY28udWsvaW1h/Z2VzL2RjLWNvbWlj/cy1jb2xsZWN0aW9u/LWp1c3RpY2UtbGVh/Z3VlLXN1cGVyLWhl/cm9lcy13YWxscGFw/ZXItcDY5MjYtMTk2/MDJfbWVkaXVtLmpw/Zw',
+    'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2370&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1679678691006-0d9a4a5df3e3?q=80&w=2370&auto=format&fit=crop'
   ];
 
   useEffect(() => {
-    // Change background every 5 seconds
     const interval = setInterval(() => {
       setCurrentBg((prev) => (prev + 1) % backgrounds.length);
     }, 5000);
@@ -70,7 +66,6 @@ const Login = ({ onLogin }) => {
         overflow: 'hidden'
       }}
     >
-      {/* Animated 3D Background */}
       <motion.div
         style={{
           position: 'absolute',
@@ -88,8 +83,7 @@ const Login = ({ onLogin }) => {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       />
-      
-      {/* Dark overlay for better readability */}
+
       <div style={{
         position: 'absolute',
         top: 0,
@@ -100,7 +94,6 @@ const Login = ({ onLogin }) => {
         zIndex: 0
       }} />
 
-      {/* Floating Particles */}
       {[...Array(10)].map((_, i) => (
         <motion.div
           key={i}
@@ -152,7 +145,7 @@ const Login = ({ onLogin }) => {
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            Welcome Back Champ! 
+            Welcome Back Champ!
           </motion.h1>
           <motion.p 
             style={{
@@ -202,8 +195,7 @@ const Login = ({ onLogin }) => {
                 background: 'rgba(255,255,255,0.8)',
                 color: '#2d3436',
                 outline: 'none',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-                borderColor: '#74b9ff'
+                boxShadow: '0 4px 8px rgba(0,0,0,0.1)'
               }}
               required
             />
@@ -275,30 +267,37 @@ const Login = ({ onLogin }) => {
           </motion.button>
         </form>
 
-        <motion.p 
-          style={{ 
-            textAlign: 'center', 
-            marginTop: '25px',
-            color: '#636e72',
-            fontFamily: '"Comic Neue", cursive',
-            fontSize: '1.1rem'
+        {/* UPDATED PART: REPLACEMENT FOR “Join the adventure” */}
+        <motion.div
+          style={{
+            textAlign: 'center',
+            marginTop: '25px'
           }}
-          whileHover={{ scale: 1.05 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
         >
-          New to our world?{' '}
-          <span 
+          <motion.button
             onClick={() => navigate('/register')}
+            whileHover={{ scale: 1.07 }}
+            whileTap={{ scale: 0.95 }}
             style={{
-              color: '#e84393',
+              background: 'linear-gradient(45deg, #6c5ce7, #fd79a8)',
+              padding: '14px 28px',
+              borderRadius: '20px',
+              border: 'none',
+              color: 'white',
+              fontSize: '1.2rem',
               fontWeight: 'bold',
               cursor: 'pointer',
-              textDecoration: 'underline wavy',
-              padding: '5px'
+              textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.2)',
+              fontFamily: '"Comic Neue", cursive'
             }}
           >
-            Join the adventure! 🎉
-          </span>
-        </motion.p>
+            Register 🚀
+          </motion.button>
+        </motion.div>
+
       </motion.div>
     </motion.div>
   );
