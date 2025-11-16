@@ -1,0 +1,17 @@
+/* Feed.css or whatever file you imported */
+.stories-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 20px 0;
+    margin-bottom: 30px;
+    gap: 25px;
+  
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .stories-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+  }
+  

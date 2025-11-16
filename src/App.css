@@ -1,0 +1,350 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #fafafa;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex: 1;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: white;
+  border-bottom: 1px solid #dbdbdb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #262626;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link {
+  color: #262626;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #0095f6;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Auth */
+.auth-container {
+  max-width: 350px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+  color: #262626;
+}
+
+.auth-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  background-color: #fafafa;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 8px;
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-error {
+  color: #ed4956;
+  margin-bottom: 15px;
+}
+
+.auth-link {
+  color: #0095f6;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Feed */
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.empty-feed {
+  text-align: center;
+  padding: 40px;
+  color: #8e8e8e;
+}
+
+/* Post */
+.post-container {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+}
+
+.post-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.post-caption {
+  padding: 10px 15px;
+}
+
+/* Create Post */
+.create-post-container {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.post-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  border: 1px dashed #dbdbdb;
+  border-radius: 3px;
+}
+
+.image-preview {
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.upload-area {
+  text-align: center;
+}
+
+.upload-btn {
+  padding: 8px 15px;
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.caption-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  resize: vertical;
+}
+
+.post-button {
+  width: 100%;
+  padding: 8px;
+  background-color: #0095f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Notifications */
+.result-notification {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.result-notification.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.result-notification.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.result-notification.banned {
+  background-color: #721c24;
+  color: white;
+}
+
+.result-notification.error {
+  background-color: #fff3cd;
+  color: #856404;
+}
+/* Violation counter styling */
+.result-notification p:last-child {
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.result-notification.banned {
+  background-color: #dc3545;
+  color: white;
+}
+
+.result-notification.banned p:last-child {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #fafafa;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex: 1;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: white;
+  border-bottom: 1px solid #dbdbdb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Feed styles */
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 60px;
+}
+
+.empty-feed {
+  text-align: center;
+  padding: 40px;
+  color: #8e8e8e;
+}
+
+/* Post styles */
+.post-container {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-image {
+  width: 100%;
+  max-height: 600px;
+  object-fit: contain;
+}
+
+.post-footer {
+  padding: 12px 16px;
+}
+
+.post-caption {
+  margin: 0 0 8px 0;
+}
+
+.post-time {
+  color: #8e8e8e;
+  font-size: 0.8rem;
+}
+
+/* Result notifications */
+.result-notification {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result-notification.approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.result-notification.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.result-notification.banned {
+  background-color: #dc3545;
+  color: white;
+}
+
+.result-notification.error {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.result-notification p:last-child {
+  margin-top: 8px;
+  font-weight: bold;
+}
