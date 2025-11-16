@@ -35,7 +35,7 @@ function App() {
 
   const checkBanStatus = async (userId) => {
     try {
-      const response = await axios.get('http://localhost:5000/api/user/status', {
+      const response = await axios.get('http://ec2-13-60-75-156.eu-north-1.compute.amazonaws.com:5000/api/user/status', {
         params: { userId }
       });
 
@@ -54,7 +54,7 @@ function App() {
       return;
     }
 
-    axios.get('http://localhost:5000/api/posts')
+    axios.get('http://ec2-13-60-75-156.eu-north-1.compute.amazonaws.com:5000/api/posts')
       .then(res => setPosts(res.data))
       .catch(err => console.error('Error fetching posts:', err));
   };
@@ -66,7 +66,7 @@ function App() {
       setUser(userData);
       checkBanStatus(userData.userId);
 
-      axios.get('http://localhost:5000/api/posts')
+      axios.get('http://ec2-13-60-75-156.eu-north-1.compute.amazonaws.com:5000/api/posts')
         .then(res => setPosts(res.data))
         .catch(err => console.error('Failed to fetch posts:', err));
     }
