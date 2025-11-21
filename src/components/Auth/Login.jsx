@@ -31,7 +31,7 @@ const Login = ({ onLogin }) => {
     setError('');
 
     try {
-      const response = await fetch('ec2-13-62-231-38.eu-north-1.compute.amazonaws.com:5000/api/auth/login', {
+      const response = await fetch('http://ec2-13-62-231-38.eu-north-1.compute.amazonaws.com:5000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
