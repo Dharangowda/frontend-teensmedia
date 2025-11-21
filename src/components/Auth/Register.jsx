@@ -31,7 +31,7 @@ const Register = ({ onRegister }) => {
     setError('');
 
     try {
-      const response = await fetch('http://ec2-13-60-75-156.eu-north-1.compute.amazonaws.com:5000/api/auth/register', {
+      const response = await fetch('ec2-13-62-231-38.eu-north-1.compute.amazonaws.com:5000/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username, password })
